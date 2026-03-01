@@ -1,24 +1,25 @@
 import { Link } from "react-router-dom";
-import heroPattern from "../assets/hero-pattern.svg";
-import teamDugout from "../assets/team-dugout.svg";
+import atbLogo from "../assets/atb-logo.png";
+import atbTeamHero from "../assets/atb-team-hero.jpg";
 
 const highlights = [
   {
     label: "What",
     detail:
-      "Year-round baseball development with stronger coaching, better reps, and a clear growth path."
+      "A cleaner path to teams, registration, and player development without digging through old page layers."
   },
   {
     label: "Who",
-    detail: "Arlington players ages 8U-12U seeking travel competition and structured skill work."
+    detail:
+      "Arlington families looking for academy and travel baseball opportunities with a stronger development focus."
   },
   {
     label: "Where",
     detail: "Arlington, Virginia, with training and game play across local and regional venues."
   },
   {
-    label: "Next season",
-    detail: "Spring 2026 programming is active now, with registration and tryout windows open."
+    label: "Right now",
+    detail: "The season is underway, so the site keeps registration, team info, and recent updates easy to reach."
   }
 ];
 
@@ -29,11 +30,11 @@ function Hero() {
         <div className="hero-layout">
           <div>
             <p className="eyebrow">Arlington Travel Baseball</p>
-            <h1>Built for players who want more reps, more purpose, and more game.</h1>
+            <h1>Keep ATB familiar, sharper, and easier to use.</h1>
             <p className="hero-text">
-              ATB gives Arlington families a modern home base for registration,
-              tryouts, team updates, and Instagram-led storytelling without the
-              clutter of a traditional league site.
+              This redesign keeps the real ATB identity front and center,
+              simplifies the path to the information families actually need, and
+              puts recent photos and updates closer to the top of the experience.
             </p>
 
             <div className="hero-facts">
@@ -61,19 +62,20 @@ function Hero() {
               </Link>
             </div>
 
-            <p className="hero-update">Updated for Spring 2026</p>
+            <p className="hero-update">Spring season is in progress.</p>
           </div>
 
           <div className="hero-visual">
             <div className="hero-card hero-card-main">
-              {/* Replace this placeholder with a current team photo in src/assets when launch media is ready. */}
-              <img src={teamDugout} alt="Illustrated ATB team moment" />
+              {/* Pulled from the current ATB site so the homepage uses real club imagery. */}
+              <img src={atbTeamHero} alt="Arlington Travel Baseball team photo" />
             </div>
             <div className="hero-card hero-card-accent">
-              <img src={heroPattern} alt="" aria-hidden="true" />
+              <img src={atbLogo} alt="Arlington Travel Baseball logo" />
               <p>
-                Instagram-driven updates keep families close to roster news,
-                training moments, and the next registration milestone.
+                The live ATB logo and team image are now baked into the site so
+                the brand matches what families already know from the current
+                homepage.
               </p>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import atbLogo from "../assets/atb-logo.png";
 
 const siteLinks = [
   { label: "Home", to: "/" },
@@ -23,7 +24,11 @@ function Footer() {
     <footer className="site-footer">
       <div className="footer-grid">
         <div>
-          <h2>Arlington Travel Baseball</h2>
+          <img
+            src={atbLogo}
+            alt="Arlington Travel Baseball"
+            className="footer-logo"
+          />
           <p>Arlington, VA</p>
           <p>PO Box 7088, Arlington, VA 22207</p>
           <p>
@@ -68,8 +73,7 @@ function Footer() {
         </div>
       </div>
       <p className="footer-meta">
-        (c) {year} Arlington Travel Baseball. Update team photos and sponsor
-        marks in `src/assets` before launch.
+        (c) {year} Arlington Travel Baseball.
       </p>
     </footer>
   );

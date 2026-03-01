@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import badge from "../assets/atb-badge.svg";
+import atbLogo from "../assets/atb-logo.png";
 
 const navItems = [
   { label: "Home", to: "/" },
@@ -12,6 +12,13 @@ const navItems = [
   { label: "Contact", to: "/contact" }
 ];
 
+const bannerConfig = {
+  enabled: false,
+  message:
+    "Click here to sign up for the ATB 6U-7U Academy (Sundays 12-1:15 at Gunston, April-June).",
+  href: "https://arlingtontravelbaseball.org/register-for-6u-7u-academy/"
+};
+
 function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -19,30 +26,24 @@ function NavBar() {
 
   return (
     <header className="site-header">
-      <div className="alert-strip">
-        <div className="nav-bar alert-shell">
-          <p className="alert-copy">
-            <span>Spring baseball is open:</span> players, coaches, and
-            volunteers can register now.
-          </p>
-          <a
-            href="https://arlingtontravelbaseball.org/register/"
-            className="button button-small button-ghost alert-action"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Go to Register
-          </a>
+      {bannerConfig.enabled ? (
+        <div className="alert-strip">
+          <div className="nav-bar alert-shell">
+            <a
+              href={bannerConfig.href}
+              className="alert-copy alert-link"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>Academy registration:</span> {bannerConfig.message}
+            </a>
+          </div>
         </div>
-      </div>
+      ) : null}
 
       <nav className="nav-bar">
         <Link to="/" className="brand-lockup" onClick={closeMenu}>
-          <img src={badge} alt="Arlington Travel Baseball badge" />
-          <span>
-            Arlington
-            <strong>Travel Baseball</strong>
-          </span>
+          <img src={atbLogo} alt="Arlington Travel Baseball" />
         </Link>
 
         <button

@@ -39,7 +39,7 @@ a {
 a:focus-visible,
 button:focus-visible {
   outline: 2px solid transparent;
-  box-shadow: 0 0 0 2px rgba(255, 179, 0, 0.85);
+  box-shadow: 0 0 0 2px rgba(66, 139, 202, 0.45);
 }
 
 #root,
@@ -71,7 +71,7 @@ main {
 }
 
 .alert-strip {
-  border-bottom: 1px solid rgba(28, 43, 61, 0.1);
+  border-bottom: 1px solid rgba(66, 139, 202, 0.25);
   background: var(--color-brand-accent);
   color: var(--color-brand-secondary);
 }
@@ -86,6 +86,10 @@ main {
   margin: 0;
   font-size: 0.875rem;
   font-weight: 500;
+}
+
+.alert-link:hover {
+  color: var(--color-brand-primary);
 }
 
 .alert-copy span {
@@ -110,8 +114,8 @@ main {
 }
 
 .brand-lockup img {
-  width: 40px;
-  height: 40px;
+  width: min(220px, 42vw);
+  height: auto;
 }
 
 .brand-lockup span {
@@ -214,7 +218,7 @@ main {
   justify-content: center;
   min-height: 2.75rem;
   padding: 0.625rem 1rem;
-  border: 1px solid transparent;
+  border: 1px solid var(--color-brand-red);
   border-radius: var(--radius-button);
   background: var(--color-brand-primary);
   color: var(--color-white);
@@ -224,12 +228,13 @@ main {
 }
 
 .button:hover {
-  background: var(--color-brand-secondary);
+  background: var(--color-brand-red);
+  border-color: var(--color-brand-red);
   transform: translateY(-1px);
 }
 
 .button-ghost {
-  border-color: rgba(11, 75, 138, 0.2);
+  border-color: rgba(66, 139, 202, 0.35);
   background: var(--color-white);
   color: var(--color-brand-primary);
 }
@@ -356,7 +361,7 @@ main {
 }
 
 .hero-card-main {
-  background: linear-gradient(135deg, var(--color-brand-secondary), #24384d);
+  background: var(--color-white);
 }
 
 .hero-card-main img {
@@ -367,11 +372,14 @@ main {
 
 .hero-card-accent {
   padding: 1rem;
-  background: linear-gradient(135deg, var(--color-brand-mist), var(--color-sky-50));
+  background: linear-gradient(180deg, var(--color-white), var(--color-brand-mist));
+  border-top: 4px solid var(--color-brand-primary);
 }
 
 .hero-card-accent img {
   border-radius: 0.75rem;
+  max-width: 220px;
+  width: 100%;
 }
 
 .hero-card-accent p {
@@ -415,14 +423,14 @@ main {
 }
 
 .dark-panel {
-  border-color: rgba(28, 43, 61, 0.22);
-  background: var(--color-brand-secondary);
+  border-color: rgba(66, 139, 202, 0.25);
+  background: linear-gradient(180deg, var(--color-sky-50), var(--color-white));
 }
 
 .dark-panel h2,
 .dark-panel p,
 .dark-panel .eyebrow {
-  color: var(--color-white);
+  color: var(--color-brand-secondary);
 }
 
 .section-heading {
@@ -442,7 +450,7 @@ main {
   margin: 0 auto 1.5rem;
   padding: 1.25rem;
   border-radius: var(--radius-card);
-  background: linear-gradient(135deg, var(--color-brand-mist), var(--color-white), var(--color-sky-50));
+  background: linear-gradient(135deg, var(--color-white), var(--color-sky-50), var(--color-brand-mist));
 }
 
 .feed-surface::before,
@@ -459,7 +467,7 @@ main {
   right: -2rem;
   width: 8rem;
   height: 8rem;
-  background: rgba(11, 75, 138, 0.12);
+  background: rgba(66, 139, 202, 0.12);
 }
 
 .feed-surface::after {
@@ -467,14 +475,27 @@ main {
   bottom: -2.5rem;
   width: 9rem;
   height: 9rem;
-  background: rgba(186, 230, 253, 0.5);
+  background: rgba(217, 232, 244, 0.85);
 }
 
 .feed-panel {
   position: relative;
   z-index: 1;
-  border-color: rgba(255, 255, 255, 0.7);
-  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(66, 139, 202, 0.12);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.feed-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.feed-avatar {
+  width: 54px;
+  height: 54px;
+  border: 1px solid var(--color-slate-200);
+  border-radius: 999px;
 }
 
 .pill-link,
@@ -489,7 +510,7 @@ main {
   align-items: center;
   justify-content: center;
   padding: 0.45rem 0.75rem;
-  border: 1px solid rgba(11, 75, 138, 0.2);
+  border: 1px solid rgba(66, 139, 202, 0.28);
   border-radius: 0.65rem;
   background: var(--color-white);
 }
@@ -499,7 +520,7 @@ main {
   margin-top: 0.75rem;
   padding: 0.45rem 0.7rem;
   border-radius: 0.6rem;
-  background: rgba(11, 75, 138, 0.08);
+  background: rgba(66, 139, 202, 0.1);
   color: var(--color-brand-primary);
   font-size: 0.8rem;
   font-weight: 600;
@@ -524,9 +545,9 @@ main {
 .instagram-card,
 .sponsor-card {
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--color-slate-200);
   border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.76);
+  background: var(--color-white);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
@@ -584,6 +605,10 @@ main {
   margin: 0.5rem 0 0;
 }
 
+.compact-grid {
+  margin-top: 1rem;
+}
+
 .page-shell {
   display: grid;
   gap: 1.25rem;
@@ -617,15 +642,21 @@ main {
 .site-footer {
   margin-top: 3rem;
   padding: 3rem 1rem 2rem;
-  background: var(--color-brand-secondary);
-  color: var(--color-white);
+  border-top: 1px solid var(--color-slate-200);
+  background: var(--color-white);
+  color: var(--color-brand-secondary);
 }
 
 .footer-grid {
   width: min(100%, var(--max-width));
   margin: 0 auto;
   padding-bottom: 1.25rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid var(--color-slate-200);
+}
+
+.footer-logo {
+  width: min(220px, 60%);
+  margin-bottom: 0.85rem;
 }
 
 .footer-grid h2 {
@@ -640,13 +671,13 @@ main {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-slate-300);
+  color: var(--color-slate-500);
 }
 
 .footer-grid p,
 .footer-grid a,
 .footer-list {
-  color: var(--color-slate-100);
+  color: var(--color-slate-600);
 }
 
 .footer-list {
@@ -662,13 +693,13 @@ main {
 .footer-note {
   margin: 1rem 0 0;
   font-size: 0.8rem;
-  color: var(--color-slate-300);
+  color: var(--color-slate-500);
 }
 
 .footer-meta {
   width: min(100%, var(--max-width));
   margin: 1rem auto 0;
-  color: var(--color-slate-300);
+  color: var(--color-slate-500);
   font-size: 0.75rem;
 }
 
@@ -730,7 +761,7 @@ main {
     flex-direction: column;
   }
 
-  .alert-action {
+  .alert-link {
     width: 100%;
   }
 }

@@ -4,56 +4,26 @@ import InstagramFeed from "../components/InstagramFeed";
 import SponsorsSection from "../components/Sponsors";
 
 const quickHits = [
-  "8U-12U travel development built around long-term growth",
-  "Tryouts, registration, and seasonal updates surfaced quickly",
-  "Instagram-first content keeps the site current with less admin work"
+  "ATB branding now matches the current public site",
+  "Instagram and recent imagery are pushed closer to the top",
+  "The path to programs, teams, and contact is shorter and cleaner"
 ];
 
-const communityLinks = [
+const startHere = [
   {
-    name: "Arlington Youth Baseball",
-    detail:
-      "Local baseball access and rec pathways that help players keep building reps.",
-    href: "https://www.arlingtonlittleleague.org/"
+    title: "Programs",
+    detail: "See the development path, age groups, and seasonal rhythm first.",
+    to: "/programs"
   },
   {
-    name: "ATB Registration",
-    detail:
-      "The fastest route for new player interest, evaluations, camps, and seasonal sign-ups.",
-    href: "https://arlingtontravelbaseball.org/register/"
+    title: "Teams",
+    detail: "Jump straight to team tracks, coaches, and roster packet requests.",
+    to: "/teams"
   },
   {
-    name: "Program Overview",
-    detail:
-      "Current training structure, seasonal rhythm, and high-level expectations for families.",
-    href: "https://arlingtontravelbaseball.org/programs/"
-  },
-  {
-    name: "Contact ATB",
-    detail:
-      "Direct support for roster questions, tryout timing, and sponsor outreach.",
-    href: "mailto:atbarsenal@gmail.com"
-  }
-];
-
-const involvement = [
-  {
-    title: "Coach With ATB",
-    detail:
-      "Help lead practices, shape player habits, and support a competitive development environment.",
+    title: "Contact",
+    detail: "One clear place for family questions, sponsor outreach, and support.",
     to: "/contact"
-  },
-  {
-    title: "Volunteer",
-    detail:
-      "Support events, operations, field setup, and the details that keep weekends moving.",
-    to: "/contact"
-  },
-  {
-    title: "Become a Sponsor",
-    detail:
-      "Back player opportunities, uniforms, and tournament access while staying visible in the community.",
-    to: "/sponsors"
   }
 ];
 
@@ -70,96 +40,58 @@ function Home() {
         ))}
       </section>
 
-      <section className="split-section">
-        <div className="content-panel">
-          <p className="eyebrow">Program Snapshot</p>
-          <h2>Serious development without losing the joy of the game.</h2>
-          <p>
-            ATB is built for Arlington players who want stronger coaching,
-            better competition, and a cleaner path from fundamentals to
-            confident travel play.
-          </p>
-          <div className="stacked-links">
-            <Link className="button button-small" to="/about">
-              Meet ATB
-            </Link>
-            <Link className="button button-small button-ghost" to="/teams">
-              View Teams
-            </Link>
-          </div>
-        </div>
-
-        <div className="content-panel dark-panel">
-          <p className="eyebrow">Next Steps</p>
-          <h2>Spring 2026 registration is active.</h2>
-          <p>
-            Publish dates here, keep the registration link obvious, and let
-            Instagram handle the live energy around sign-up reminders and team
-            updates.
-          </p>
-          <a
-            className="button button-small"
-            href="https://arlingtontravelbaseball.org/register/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Go to Registration
-          </a>
-        </div>
-      </section>
-
       <section className="feed-surface">
         <InstagramFeed />
       </section>
 
-      <SponsorsSection />
-
-      <section className="content-panel">
-        <div className="section-heading">
-          <div>
-            <p className="eyebrow">Arlington Baseball</p>
-            <h2>Key links families actually need</h2>
-          </div>
-          <p className="section-caption">
-            Keep this section lightweight: fast paths to registration, program
-            details, and core community connections.
+      <section className="split-section">
+        <div className="content-panel">
+          <p className="eyebrow">Start Here</p>
+          <h2>Put the most-used actions in one place.</h2>
+          <p>
+            The homepage is lighter now: the top of the site focuses on the ATB
+            brand, recent photos, and the shortest route to the pages families
+            use most.
           </p>
+
+          <div className="level-grid compact-grid">
+            {startHere.map((item) => (
+              <article key={item.title} className="mini-card">
+                <h3>{item.title}</h3>
+                <p>{item.detail}</p>
+                <Link to={item.to} className="inline-link">
+                  Open page
+                </Link>
+              </article>
+            ))}
+          </div>
         </div>
-        <div className="page-grid">
-          {communityLinks.map((item) => (
+
+        <div className="content-panel dark-panel">
+          <p className="eyebrow">Current Season</p>
+          <h2>The season is underway, so the experience stays focused.</h2>
+          <p>
+            Registration is still easy to reach from the header and the main
+            calls to action, while the homepage keeps the focus on teams,
+            updates, and the next useful step for families.
+          </p>
+          <div className="stacked-links">
             <a
-              key={item.name}
-              href={item.href}
-              className="mini-card"
-              target={item.href.startsWith("http") ? "_blank" : undefined}
-              rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+              className="button button-small"
+              href="https://arlingtontravelbaseball.org/register/"
+              target="_blank"
+              rel="noreferrer"
             >
-              <h3>{item.name}</h3>
-              <p>{item.detail}</p>
+              Go to Registration
             </a>
-          ))}
+            <Link className="button button-small button-ghost" to="/about">
+              About ATB
+            </Link>
+          </div>
         </div>
       </section>
 
-      <section className="content-panel">
-        <div className="section-heading">
-          <div>
-            <p className="eyebrow">Get Involved</p>
-            <h2>Support the program on and off the field</h2>
-          </div>
-        </div>
-        <div className="level-grid">
-          {involvement.map((item) => (
-            <article key={item.title} className="mini-card">
-              <h3>{item.title}</h3>
-              <p>{item.detail}</p>
-              <Link to={item.to} className="inline-link">
-                Learn more
-              </Link>
-            </article>
-          ))}
-        </div>
-      </section>
+      <SponsorsSection />
 
       <section className="content-panel">
         <p className="eyebrow">Need Help?</p>

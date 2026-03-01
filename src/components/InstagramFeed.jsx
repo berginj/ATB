@@ -1,33 +1,36 @@
 import { useEffect, useState } from "react";
 import { fetchInstagramMedia } from "../lib/instagram";
-import heroPattern from "../assets/hero-pattern.svg";
-import teamDugout from "../assets/team-dugout.svg";
+import atbAvatar from "../assets/atb-instagram-avatar.webp";
+import atbTeamHero from "../assets/atb-team-hero.jpg";
 
 // Set real credentials here for a quick local test, or prefer VITE_INSTAGRAM_* env vars in Azure Static Web Apps.
 const ACCESS_TOKEN =
   import.meta.env.VITE_INSTAGRAM_ACCESS_TOKEN || "INSTAGRAM_ACCESS_TOKEN";
 const USER_ID = import.meta.env.VITE_INSTAGRAM_USER_ID || "INSTAGRAM_USER_ID";
 const PROFILE_URL =
-  import.meta.env.VITE_INSTAGRAM_PROFILE_URL || "https://www.instagram.com/";
+  import.meta.env.VITE_INSTAGRAM_PROFILE_URL || "https://www.instagram.com/atb_arsenal/";
 
 const fallbackPosts = [
   {
     id: "fallback-1",
-    caption: "Training windows, team wins, and key registration reminders can be featured here.",
-    media_url: teamDugout,
-    permalink: "https://www.instagram.com/"
+    caption:
+      "The fallback feed now uses real ATB imagery pulled from the current site instead of placeholder art.",
+    media_url: atbTeamHero,
+    permalink: "https://arlingtontravelbaseball.org/"
   },
   {
     id: "fallback-2",
-    caption: "Replace the Instagram placeholders with real credentials to pull the latest ATB posts.",
-    media_url: heroPattern,
-    permalink: "https://www.instagram.com/"
+    caption:
+      "Add live Instagram credentials to replace these fallback cards with the latest posts from @atb_arsenal.",
+    media_url: atbAvatar,
+    permalink: PROFILE_URL
   },
   {
     id: "fallback-3",
-    caption: "If the API rate limit is reached, the site automatically falls back to this curated content.",
-    media_url: teamDugout,
-    permalink: "https://www.instagram.com/"
+    caption:
+      "If the API rate limit is hit, the site keeps showing ATB-branded images and links instead of going empty.",
+    media_url: atbTeamHero,
+    permalink: "https://arlingtontravelbaseball.org/"
   }
 ];
 
@@ -35,7 +38,7 @@ function InstagramFeed() {
   const [posts, setPosts] = useState(fallbackPosts);
   const [status, setStatus] = useState("idle");
   const [message, setMessage] = useState(
-    "Instagram is using placeholder content until live API credentials are added."
+    "ATB fallback images are shown until live Instagram credentials are added."
   );
 
   useEffect(() => {
@@ -95,9 +98,16 @@ function InstagramFeed() {
   return (
     <section className="content-panel feed-panel">
       <div className="section-heading">
-        <div>
-          <p className="eyebrow">Live From ATB</p>
-          <h2>Latest posts and updates</h2>
+        <div className="feed-profile">
+          <img
+            src={atbAvatar}
+            alt="ATB Instagram avatar"
+            className="feed-avatar"
+          />
+          <div>
+            <p className="eyebrow">Live From ATB</p>
+            <h2>Recent photos and updates</h2>
+          </div>
         </div>
         <div className="pill-actions">
           <a
@@ -120,9 +130,9 @@ function InstagramFeed() {
       </div>
 
       <p className="section-caption">
-        Add real credentials in `src/components/InstagramFeed.jsx` or set
-        `VITE_INSTAGRAM_ACCESS_TOKEN` and `VITE_INSTAGRAM_USER_ID` in your
-        build environment before deploying.
+        This section sits near the top now so families hit recent visuals first.
+        Add real credentials in `src/components/InstagramFeed.jsx` or set the
+        `VITE_INSTAGRAM_*` environment variables before deploying.
       </p>
 
       <div className={`status-chip status-${status}`}>{message}</div>
