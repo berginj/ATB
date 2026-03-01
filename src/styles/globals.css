@@ -594,6 +594,31 @@ main {
   margin-bottom: 0.75rem;
 }
 
+.sponsor-card-real {
+  display: flex;
+  flex-direction: column;
+}
+
+.sponsor-logo-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 110px;
+  padding: 0.75rem;
+  border: 1px solid var(--color-slate-200);
+  border-radius: 0.75rem;
+  background: var(--color-white);
+}
+
+.sponsor-logo-frame img {
+  width: auto;
+  max-width: 100%;
+  max-height: 56px;
+  margin: 0;
+  border-radius: 0;
+  object-fit: contain;
+}
+
 .mini-card h3 {
   margin: 0;
   color: var(--color-brand-secondary);
