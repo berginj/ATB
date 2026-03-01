@@ -45,7 +45,7 @@ function SponsorsSection() {
       <div className="section-heading">
         <div>
           <p className="eyebrow">Featured Sponsors</p>
-          <h2>Real sponsor logos from the current ATB site</h2>
+          <h2>Current ATB sponsor logos</h2>
         </div>
         <Link className="inline-link" to="/sponsors">
           View sponsor opportunities
@@ -54,7 +54,7 @@ function SponsorsSection() {
 
       <p className="section-caption">
         These logos were pulled directly from the live ATB site so the sponsor
-        section now reflects the current partner lineup instead of mock assets.
+        section reflects the current partner lineup instead of placeholder art.
       </p>
 
       <div className="sponsor-grid">
@@ -70,8 +70,8 @@ function SponsorsSection() {
       </div>
 
       <p className="helper-copy">
-        Additional sponsor rows can be added here with more logos from the live
-        ATB sponsor list.
+        Verified sponsor destination URLs can be added here once ATB confirms
+        them.
       </p>
     </section>
   );

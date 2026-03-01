@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const levels = [
   {
     name: "8U",
@@ -33,7 +35,7 @@ function Programs() {
     <section className="page-shell">
       <div className="page-hero">
         <p className="eyebrow">Programs</p>
-        <h1>A clear pathway from 8U through 12U.</h1>
+        <h1>A clearer development path, paired with a cleaner next step.</h1>
         <p>
           Every team is designed to build durable fundamentals first, then add
           game awareness, speed, strength, and competitive confidence.
@@ -46,14 +48,9 @@ function Programs() {
             <p className="eyebrow">{level.name}</p>
             <h2>{level.name} Development Track</h2>
             <p>{level.focus}</p>
-            <a
-              className="button button-small button-ghost"
-              href="https://arlingtontravelbaseball.org/register/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Register Interest
-            </a>
+            <Link className="button button-small button-ghost" to="/tryouts">
+              View Tryouts
+            </Link>
           </article>
         ))}
       </div>
@@ -68,6 +65,10 @@ function Programs() {
             </div>
           ))}
         </div>
+        <p className="helper-copy">
+          Additional program-specific pages can expand once ATB confirms the
+          current season lineup.
+        </p>
       </div>
     </section>
   );

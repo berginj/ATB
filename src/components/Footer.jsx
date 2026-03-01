@@ -11,10 +11,7 @@ const siteLinks = [
 const supportLinks = [
   { label: "Teams", to: "/teams" },
   { label: "Sponsors", to: "/sponsors" },
-  {
-    label: "Registration",
-    href: "https://arlingtontravelbaseball.org/register/"
-  }
+  { label: "Registration", to: "/registration" }
 ];
 
 function Footer() {
@@ -55,13 +52,7 @@ function Footer() {
           <ul className="footer-list">
             {supportLinks.map((link) => (
               <li key={link.label}>
-                {link.to ? (
-                  <Link to={link.to}>{link.label}</Link>
-                ) : (
-                  <a href={link.href} target="_blank" rel="noreferrer">
-                    {link.label}
-                  </a>
-                )}
+                <Link to={link.to}>{link.label}</Link>
               </li>
             ))}
           </ul>

@@ -1,28 +1,19 @@
 const teams = [
   {
-    name: "8U Arsenal",
-    coach: "Coach-led academy staff",
-    roster: "Foundational reps, small-group instruction, fast feedback."
+    name: "Academy / entry level",
+    detail: "Use this slot for the youngest development-first group once the current season lineup is confirmed."
   },
   {
-    name: "9U Arsenal",
-    coach: "Coach Fox and development staff",
-    roster: "Defensive habits, base running, and early game management."
+    name: "Younger travel groups",
+    detail: "Publish the current active younger teams here with verified coach assignments and contact ownership."
   },
   {
-    name: "10U Arsenal",
-    coach: "Professional coaching rotation",
-    roster: "Higher-tempo practices and expanded situational work."
+    name: "Core travel groups",
+    detail: "Use this space for the main in-season teams once ATB confirms the current roster structure."
   },
   {
-    name: "11U Arsenal",
-    coach: "Lead coach assigned by season",
-    roster: "Transition-focused training for 50/70 gameplay."
-  },
-  {
-    name: "12U Arsenal",
-    coach: "Senior ATB coaching group",
-    roster: "Advanced baseball IQ, strength prep, and tournament readiness."
+    name: "Big-field transition",
+    detail: "Publish older-team expectations here only after the season details and coach assignments are final."
   }
 ];
 
@@ -31,10 +22,11 @@ function Teams() {
     <section className="page-shell">
       <div className="page-hero">
         <p className="eyebrow">Teams</p>
-        <h1>Five development tracks, one shared standard.</h1>
+        <h1>Keep the team page current, accurate, and easy to trust.</h1>
         <p>
-          Use this page for coach assignments, team snapshots, and roster packet
-          links when each group is finalized.
+          The old risk here was publishing stale coach or roster info. This page
+          now focuses on clean placeholders until ATB confirms the current team
+          structure and contact ownership.
         </p>
       </div>
 
@@ -42,15 +34,19 @@ function Teams() {
         {teams.map((team) => (
           <article key={team.name} className="content-panel">
             <p className="eyebrow">{team.name}</p>
-            <h2>{team.coach}</h2>
-            <p>{team.roster}</p>
+            <h2>{team.name}</h2>
+            <p>{team.detail}</p>
+            <p className="helper-copy">
+              Replace this placeholder with the real coach, practice rhythm, and
+              roster packet link for the current season.
+            </p>
             <a
               className="button button-small button-ghost"
               href={`mailto:atbarsenal@gmail.com?subject=${encodeURIComponent(
-                `${team.name} roster packet`
+                `${team.name} team information`
               )}`}
             >
-              Request Roster Packet
+              Request Team Details
             </a>
           </article>
         ))}

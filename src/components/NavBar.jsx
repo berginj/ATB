@@ -4,12 +4,13 @@ import atbLogo from "../assets/atb-logo.png";
 
 const navItems = [
   { label: "Home", to: "/" },
-  { label: "About", to: "/about" },
-  { label: "Programs", to: "/programs" },
   { label: "Tryouts", to: "/tryouts" },
+  { label: "Registration", to: "/registration" },
+  { label: "Programs", to: "/programs" },
   { label: "Teams", to: "/teams" },
   { label: "Sponsors", to: "/sponsors" },
-  { label: "Contact", to: "/contact" }
+  { label: "Contact", to: "/contact" },
+  { label: "About", to: "/about" }
 ];
 
 const bannerConfig = {
@@ -71,15 +72,13 @@ function NavBar() {
               {item.label}
             </NavLink>
           ))}
-          <a
-            href="https://arlingtontravelbaseball.org/register/"
+          <Link
+            to="/registration"
             className="button button-small nav-register"
-            target="_blank"
-            rel="noreferrer"
             onClick={closeMenu}
           >
-            Register
-          </a>
+            Register for Tryouts
+          </Link>
         </div>
       </nav>
     </header>
