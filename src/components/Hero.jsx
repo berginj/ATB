@@ -4,20 +4,20 @@ import atbTeamHero from "../assets/atb-team-hero.jpg";
 
 const highlights = [
   {
-    label: "Fastest path",
-    detail: "Parents can now move from tryouts to registration without leaving the site."
+    label: "Player development",
+    detail: "Every ATB touchpoint is built to help players grow with confidence, discipline, and purpose."
   },
   {
-    label: "Built for",
-    detail: "Arlington and Northern Virginia families comparing next-step baseball options."
+    label: "Family clarity",
+    detail: "Parents can move quickly from program questions to tryouts, registration, and direct contact."
   },
   {
-    label: "Credibility",
-    detail: "Real ATB branding, real sponsor logos, and a direct support path are visible from the homepage."
+    label: "Local roots",
+    detail: "ATB stays connected to Arlington families, rec baseball, and the wider local baseball community."
   },
   {
-    label: "Fallback",
-    detail: "If a hosted form endpoint is not connected yet, every lead form still routes to ATB email."
+    label: "Club support",
+    detail: "Sponsors, coaches, and families all play a role in keeping opportunities strong all season."
   }
 ];
 
@@ -28,11 +28,10 @@ function Hero() {
         <div className="hero-layout">
           <div>
             <p className="eyebrow">Arlington Travel Baseball</p>
-            <h1>Make the next step obvious for parents and sponsors.</h1>
+            <h1>Player development, strong teams, and a clear path forward.</h1>
             <p className="hero-text">
-              The homepage now does the three jobs that matter most: establish
-              trust quickly, send families into a real tryout registration path,
-              and keep sponsor visibility visible without forcing extra clicks.
+              ATB gives Arlington families a stronger baseball path built on
+              development, competition, and clear communication at every step.
             </p>
 
             <div className="hero-facts">
@@ -56,8 +55,7 @@ function Hero() {
             </div>
 
             <p className="hero-update">
-              Verified program metrics can replace this general proof copy once
-              ATB confirms what can be published.
+              Spring baseball is in full swing across Arlington.
             </p>
           </div>
 
@@ -69,8 +67,8 @@ function Hero() {
             <div className="hero-card hero-card-accent">
               <img src={atbLogo} alt="Arlington Travel Baseball logo" />
               <p>
-                The live ATB logo and team image stay in place so the redesign
-                feels familiar while the conversion flow gets cleaner.
+                The same ATB identity families already know, presented with a
+                cleaner, faster experience.
               </p>
             </div>
           </div>

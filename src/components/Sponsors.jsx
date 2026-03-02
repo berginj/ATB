@@ -53,8 +53,8 @@ function SponsorsSection() {
       </div>
 
       <p className="section-caption">
-        These logos were pulled directly from the live ATB site so the sponsor
-        section reflects the current partner lineup instead of placeholder art.
+        Local partners who help fund player development and keep the club
+        moving all season.
       </p>
 
       <div className="sponsor-grid">
@@ -70,8 +70,8 @@ function SponsorsSection() {
       </div>
 
       <p className="helper-copy">
-        Verified sponsor destination URLs can be added here once ATB confirms
-        them.
+        Interested in joining this group? Explore current sponsorship
+        opportunities.
       </p>
     </section>
   );

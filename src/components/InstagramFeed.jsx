@@ -14,21 +14,21 @@ const fallbackPosts = [
   {
     id: "fallback-1",
     caption:
-      "The fallback feed now uses real ATB imagery pulled from the current site instead of placeholder art.",
+      "Highlights from across the ATB community, from training days to spring competition.",
     media_url: atbTeamHero,
     permalink: "https://arlingtontravelbaseball.org/"
   },
   {
     id: "fallback-2",
     caption:
-      "Add live Instagram credentials to replace these fallback cards with the latest posts from @atb_arsenal.",
+      "Follow @atb_arsenal for game-day photos, player moments, and club updates.",
     media_url: atbAvatar,
     permalink: PROFILE_URL
   },
   {
     id: "fallback-3",
     caption:
-      "If the API rate limit is hit, the site keeps showing ATB-branded images and links instead of going empty.",
+      "Spring updates, team energy, and the moments that make the season special.",
     media_url: atbTeamHero,
     permalink: "https://arlingtontravelbaseball.org/"
   }
@@ -37,9 +37,7 @@ const fallbackPosts = [
 function InstagramFeed() {
   const [posts, setPosts] = useState(fallbackPosts);
   const [status, setStatus] = useState("idle");
-  const [message, setMessage] = useState(
-    "ATB fallback images are shown until live Instagram credentials are added."
-  );
+  const [message, setMessage] = useState("Follow along with the latest ATB highlights.");
 
   useEffect(() => {
     if (
@@ -65,14 +63,14 @@ function InstagramFeed() {
 
         if (nextPosts.length === 0) {
           setStatus("empty");
-          setMessage("No Instagram posts were returned, so placeholder highlights are shown.");
+          setMessage("More ATB highlights are on the way.");
           setPosts(fallbackPosts);
           return;
         }
 
         setPosts(nextPosts);
         setStatus("ready");
-        setMessage("Latest Instagram posts");
+        setMessage("Latest ATB Instagram posts");
       } catch (error) {
         if (error.name === "AbortError") {
           return;
@@ -83,8 +81,8 @@ function InstagramFeed() {
         setStatus(rateLimited ? "rate-limited" : "error");
         setMessage(
           rateLimited
-            ? "Instagram request limits were reached. Showing fallback highlights instead."
-            : "Instagram is temporarily unavailable. Showing fallback highlights instead."
+            ? "Instagram is temporarily busy. Check back soon for more highlights."
+            : "Instagram is temporarily unavailable. Club highlights are still available below."
         );
         setPosts(fallbackPosts);
       }
@@ -120,9 +118,7 @@ function InstagramFeed() {
           </a>
           <a
             className="pill-link"
-            href="https://arlingtontravelbaseball.org/register/"
-            target="_blank"
-            rel="noreferrer"
+            href="/registration"
           >
             Registration
           </a>
@@ -130,9 +126,8 @@ function InstagramFeed() {
       </div>
 
       <p className="section-caption">
-        This section sits near the top now so families hit recent visuals first.
-        Add real credentials in `src/components/InstagramFeed.jsx` or set the
-        `VITE_INSTAGRAM_*` environment variables before deploying.
+        Game-day energy, player moments, and club updates from across the ATB
+        community.
       </p>
 
       <div className={`status-chip status-${status}`}>{message}</div>

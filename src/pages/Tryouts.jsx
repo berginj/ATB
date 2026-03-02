@@ -10,16 +10,16 @@ import {
 
 const proofItems = [
   {
-    title: "Canonical page",
-    detail: "This is the one ATB tryouts page that should rank and be shared for the 2026 season."
+    title: "One clear process",
+    detail: "Families can get the essentials quickly and move straight into registration."
   },
   {
-    title: "Local intent",
-    detail: "The copy now matches how Arlington and Northern Virginia parents search for travel baseball tryouts."
+    title: "Arlington focus",
+    detail: "Built for families balancing player development, spring schedules, and the right competitive fit."
   },
   {
-    title: "Clear fallback",
-    detail: "If details are still pending, families can still move into registration or contact without hitting a dead end."
+    title: "Straightforward next steps",
+    detail: "If you have questions, ATB is easy to reach by registration form or direct contact."
   }
 ];
 
@@ -34,29 +34,29 @@ const faqs = [
   {
     question: "When are ATB tryouts in 2026?",
     answer:
-      "The confirmed current-season tryout calendar will be posted here as soon as ATB finalizes dates and rain plans."
+      "ATB shares tryout dates as each session is finalized so families can plan with confidence."
   },
   {
     question: "Where are ATB tryouts held?",
     answer:
-      "The confirmed field locations, arrival instructions, and parking notes will be listed here once the schedule is locked."
+      "Field locations, arrival details, and any game-day notes are shared as part of the tryout information for each session."
   },
   {
     question: "Is there a tryout fee?",
     answer:
-      "Fee details will be published here only after ATB confirms whether a current-season evaluation fee applies."
+      "Any tryout fee information is shared directly with families as part of the registration process."
   },
   {
     question: "What happens after a family registers?",
     answer:
-      "ATB should follow up with the right age-group next step, final logistics, and any player-specific details."
+      "ATB follows up with next steps, final logistics, and the information your family needs for the session."
   }
 ];
 
 function Tryouts() {
   const title = "ATB Tryouts 2026 | Arlington Youth Travel Baseball";
   const description =
-    "The canonical ATB tryouts landing page for Arlington and Northern Virginia families: dates, expectations, FAQs, and the working registration path.";
+    "ATB tryouts for Arlington and Northern Virginia families: dates, expectations, FAQs, and a direct registration path.";
 
   return (
     <>
@@ -84,9 +84,8 @@ function Tryouts() {
           <p className="eyebrow">Tryouts 2026</p>
           <h1>ATB tryouts 2026 in Arlington, VA: one page, one next step.</h1>
           <p>
-            The old “find the right post” workflow is gone. Arlington and
-            Northern Virginia families should be able to land here, understand
-            the process quickly, and move straight into registration.
+            Families can come here first for the essentials, understand the
+            process quickly, and move straight into registration.
           </p>
           <div className="stacked-links">
             <Link className="button button-small" to="/registration">
@@ -98,24 +97,24 @@ function Tryouts() {
           </div>
         </div>
 
-        <ProofStrip items={proofItems} eyebrow="Trust first" />
+        <ProofStrip items={proofItems} eyebrow="Why Families Choose ATB" />
 
         <div className="split-section">
           <div className="content-panel">
             <p className="eyebrow">Before you register</p>
-            <h2>Publish the essentials here every season.</h2>
+            <h2>The right details make tryout day easier.</h2>
             <div className="feature-list">
               <div className="feature-row">
-                Confirmed tryout dates and any rain-date backup plan belong here.
+                ATB shares tryout dates and rain plans as sessions are finalized.
               </div>
               <div className="feature-row">
-                Field locations, arrival window, and parking guidance belong here.
+                Field locations, arrival windows, and parking details are shared with each session.
               </div>
               <div className="feature-row">
-                The current season age-group lineup should be published here once it is confirmed.
+                Age-group placement is matched to the right development track for each player.
               </div>
               <div className="feature-row">
-                Evaluation fee details should only appear here if a fee is actually required.
+                Any fee information is handled clearly as part of registration.
               </div>
             </div>
           </div>
@@ -145,7 +144,7 @@ function Tryouts() {
 
         <div className="content-panel">
           <p className="eyebrow">Keep exploring</p>
-          <h2>Support the questions that happen before registration.</h2>
+          <h2>Get the answers families usually want before they register.</h2>
           <div className="stacked-links">
             <Link className="button button-small button-ghost" to="/costs-commitment">
               Costs + Commitment
@@ -167,10 +166,10 @@ function Tryouts() {
 
         <div className="content-panel">
           <p className="eyebrow">Next step</p>
-          <h2>Turn tryout interest into a working form submission.</h2>
+          <h2>Take the next step and register.</h2>
           <p>
-            Once a family has the basics, the next click should take them to the
-            registration form, not an archive page or a generic post.
+            Once you are ready, the next click should take you straight into the
+            registration form.
           </p>
           <div className="stacked-links">
             <Link className="button button-small" to="/registration">

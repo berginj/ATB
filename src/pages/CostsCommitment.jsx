@@ -8,9 +8,9 @@ import {
 import { programSeasonRhythm } from "../data/programs";
 
 const costNotes = [
-  "Exact dues, uniform costs, and tournament costs still need confirmation before they should be published.",
-  "Families should expect travel baseball to carry a higher time and communication load than rec-only baseball.",
-  "The most useful current next step is reviewing tryouts and contacting ATB directly with fit questions."
+  "Travel baseball is a bigger family commitment than rec-only baseball, both on the calendar and in communication.",
+  "Team dues, uniforms, and tournament plans are part of the season conversation for every family.",
+  "The best next step is to review tryouts and speak directly with ATB about the right fit for your player."
 ];
 
 function CostsCommitment() {
@@ -44,9 +44,8 @@ function CostsCommitment() {
           <h1>What travel baseball costs and commitment really mean for families.</h1>
           <p>
             Parents search for pricing, but the decision is usually bigger than
-            one number. This page gives ATB a search-friendly place to explain
-            the time commitment, season rhythm, and the questions families
-            should ask before registering.
+            one number. The full picture includes time, communication, season
+            rhythm, and the way baseball fits the rest of family life.
           </p>
         </div>
 
@@ -64,8 +63,8 @@ function CostsCommitment() {
           </div>
 
           <div className="content-panel dark-panel">
-            <p className="eyebrow">What to confirm</p>
-            <h2>Do not publish exact pricing until it is confirmed.</h2>
+            <p className="eyebrow">What families should plan for</p>
+            <h2>Know what the season asks before you commit.</h2>
             <div className="feature-list">
               {costNotes.map((item) => (
                 <div key={item} className="feature-row">

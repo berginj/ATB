@@ -78,8 +78,8 @@ function Contact() {
         <p className="eyebrow">Contact</p>
         <h1>One reliable contact path for parents, players, and sponsors.</h1>
         <p>
-          Instead of scattering fragile forms across team pages, this page keeps
-          one support path visible and gives ATB a clearer inbox to manage.
+          Questions about tryouts, registration, teams, or sponsorships all
+          start here. ATB is easy to reach and ready to help.
         </p>
       </div>
 
@@ -108,11 +108,11 @@ function Contact() {
       <LeadForm
         formId="general-contact"
         title="Send ATB a direct message"
-        description="This form should replace broken team-page contact forms and give families one working support path."
+        description="Use this form for questions, follow-up, or anything your family needs from ATB."
         fields={contactFields}
         submitLabel="Send message"
-        successTitle="Message path started"
-        successMessage="ATB now has the message details needed for follow-up."
+        successTitle="Message received"
+        successMessage="ATB has your message and will follow up as soon as possible."
         endpoint={contactEndpoint}
         mailtoSubject="ATB website contact request"
         events={{
@@ -120,7 +120,7 @@ function Contact() {
           success: "contact_submit_success",
           fail: "contact_submit_fail"
         }}
-        aside="This form can switch from email-draft fallback to direct in-browser submit once ATB connects the production inbox workflow."
+        aside="One direct path for fast questions and clear follow-up."
       />
 
       <div className="content-panel dark-panel">

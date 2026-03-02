@@ -15,7 +15,7 @@ const localSignals = [
 const nextSteps = [
   {
     title: "Review tryouts",
-    detail: "Start with the canonical page for current-season tryout timing and next steps.",
+    detail: "See how ATB handles the tryout process, timing, and next steps for families.",
     to: "/tryouts"
   },
   {
@@ -33,7 +33,7 @@ const nextSteps = [
 function TravelBaseballArlington() {
   const title = "Travel Baseball in Arlington, VA (8U-12U)";
   const description =
-    "A local guide for Arlington and Northern Virginia families comparing ATB travel baseball, tryouts, age groups, and next steps.";
+    "A local guide for Arlington and Northern Virginia families comparing ATB travel baseball, age groups, tryouts, and next steps.";
 
   return (
     <>
@@ -57,13 +57,11 @@ function TravelBaseballArlington() {
 
       <section className="page-shell">
         <div className="page-hero">
-          <p className="eyebrow">Local Search Guide</p>
+          <p className="eyebrow">Arlington Families</p>
           <h1>Travel baseball in Arlington, VA for families comparing next steps.</h1>
           <p>
-            This page exists to match the way parents actually search. It gives
-            Arlington and Northern Virginia families one clear entry point for
-            travel baseball, then routes them to the program, tryout, and
-            registration pages that answer the next question.
+            ATB gives Arlington and Northern Virginia families a stronger path
+            for player development, competitive baseball, and clear next steps.
           </p>
         </div>
 
@@ -86,13 +84,13 @@ function TravelBaseballArlington() {
           </div>
 
           <div className="content-panel dark-panel">
-            <p className="eyebrow">What is still pending</p>
-            <h2>Publish exact season details only after they are confirmed.</h2>
+            <p className="eyebrow">What families can expect</p>
+            <h2>Strong communication, steady development, and a local foundation.</h2>
             <p>
-              ATB should add the current active age-group lineup, exact tryout
-              calendar, and coach assignments once they are finalized for the
-              season. Until then, this page should stay focused on accurate
-              overview content and clear routing.
+              ATB is built around consistent coaching, a clear process, and a
+              strong connection to Arlington baseball. Families can move from
+              this overview into programs, tryouts, and registration without
+              losing momentum.
             </p>
           </div>
         </div>

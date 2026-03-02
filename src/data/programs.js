@@ -6,11 +6,11 @@ export const ageGroupPrograms = [
       "Academy-style fundamentals, athletic movement, and confidence-building reps.",
     searchHeadline: "8U travel baseball in Arlington, VA",
     fit:
-      "This page helps families searching for an early travel-baseball option in Arlington understand the development-first starting point.",
+      "A development-first starting point for young players ready for more reps, structure, and confidence-building instruction.",
     details: [
       "Foundational reps and game basics come first.",
-      "Families should confirm the exact spring and fall structure once ATB finalizes the active team lineup.",
-      "Coach assignments and roster details should be published only after they are confirmed."
+      "Players build athletic movement, rhythm, and early game habits.",
+      "Families stay connected through clear communication and steady skill work."
     ]
   },
   {
@@ -20,11 +20,11 @@ export const ageGroupPrograms = [
       "Core mechanics, defensive footwork, base running, and team habits.",
     searchHeadline: "9U travel baseball in Arlington, VA",
     fit:
-      "This page gives parents a dedicated 9U landing page instead of forcing them into broad program copy.",
+      "A strong next step for players ready to sharpen core mechanics and become more complete teammates.",
     details: [
       "The focus stays on repeatable mechanics and clean baseball habits.",
-      "Families should use the tryouts page for the current evaluation process and season timing.",
-      "Exact coach, schedule, and roster details still need final confirmation from ATB."
+      "Practice work stays centered on defensive footwork, base running, and baseball instincts.",
+      "Families get a clear path into tryouts, registration, and team communication."
     ]
   },
   {
@@ -34,11 +34,11 @@ export const ageGroupPrograms = [
       "Advanced defensive reads, situational offense, and stronger team play.",
     searchHeadline: "10U travel baseball in Arlington, VA",
     fit:
-      "Families searching for 10U baseball in Arlington now have a dedicated age-group page that can rank on its own.",
+      "A competitive, high-rep environment for players ready to grow their feel for the game.",
     details: [
       "This level expands situational reps and stronger in-game awareness.",
-      "ATB should publish the exact current-season team structure here once it is finalized.",
-      "Use the registration flow for next-step interest while exact slots are being confirmed."
+      "Players are pushed to make faster reads and more confident in-game decisions.",
+      "The next step stays simple: review tryouts, register, and stay connected with ATB."
     ]
   },
   {
@@ -48,11 +48,11 @@ export const ageGroupPrograms = [
       "50/70 transition prep, off-speed adjustments, and game-speed decisions.",
     searchHeadline: "11U travel baseball in Arlington, VA",
     fit:
-      "This page gives Arlington families a direct path when they are specifically looking for 11U travel baseball.",
+      "A development track built for players preparing for bigger moments, faster speed, and stronger competition.",
     details: [
       "The emphasis shifts toward game-speed decision-making and transition readiness.",
-      "Season timing, coach assignments, and roster info should be updated here once ATB confirms them.",
-      "The tryouts page remains the canonical page for current registration timing."
+      "Players train for the 50/70 transition and the demands of a faster game.",
+      "Families can move directly from this page into tryouts and registration."
     ]
   },
   {
@@ -62,11 +62,11 @@ export const ageGroupPrograms = [
       "Complete player development, strength work, and preparation for the big field.",
     searchHeadline: "12U travel baseball in Arlington, VA",
     fit:
-      "This page gives families looking for late-youth travel baseball in Arlington a clean, search-friendly landing page.",
+      "A complete training environment for players preparing for the next level of competition.",
     details: [
       "This level focuses on complete player development and big-field preparation.",
-      "ATB should publish the confirmed coach, team, and tournament details here once they are final.",
-      "Families can use tryouts or registration now while the exact current-season structure is still being confirmed."
+      "Strength, baseball IQ, and competitive maturity become central to the program.",
+      "Families can move straight into tryouts, registration, and the broader ATB program path."
     ]
   }
 ];

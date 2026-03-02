@@ -10,17 +10,17 @@ import {
 const parentResourceLinks = [
   {
     title: "Travel Baseball in Arlington",
-    detail: "A search-friendly local guide for families comparing next-step baseball options.",
+    detail: "See how ATB fits families looking for a stronger baseball path in Arlington.",
     to: "/travel-baseball-arlington-va"
   },
   {
     title: "Costs + Commitment",
-    detail: "Use this page to answer the time and commitment questions before registration.",
+    detail: "Understand the season rhythm, commitment, and family expectations.",
     to: "/costs-commitment"
   },
   {
     title: "Rec + Travel Compatibility",
-    detail: "Show parents how ATB fits alongside Arlington Little League and spring rec baseball.",
+    detail: "See how ATB works alongside Arlington Little League and spring rec baseball.",
     to: "/rec-travel-compatibility"
   }
 ];
@@ -55,9 +55,9 @@ function Programs() {
           <p className="eyebrow">Programs</p>
           <h1>8U-12U travel baseball in Arlington, with a clearer path by age group.</h1>
           <p>
-            The program page now acts as a real hub: broad overview here,
-            dedicated search-friendly pages for each age group, and direct links
-            into tryouts and registration.
+            ATB gives each age group a clear place in the program so families
+            can find the right fit, understand the development focus, and move
+            straight into tryouts.
           </p>
         </div>
 
@@ -72,10 +72,10 @@ function Programs() {
                   className="button button-small button-ghost"
                   to={`/programs/${program.slug}`}
                 >
-                  Open {program.name} Page
+                  Explore {program.name}
                 </Link>
                 <Link className="inline-link" to="/tryouts">
-                  Review tryouts
+                  Tryout details
                 </Link>
               </div>
             </article>
@@ -93,14 +93,11 @@ function Programs() {
                 </div>
               ))}
             </div>
-            <p className="helper-copy">
-              Publish exact current-season team structure only after ATB confirms
-              which age groups are active.
-            </p>
+            <p className="helper-copy">A steady rhythm of training, competition, and development through every season.</p>
           </div>
 
           <div className="content-panel dark-panel">
-            <p className="eyebrow">Parent Search Guides</p>
+            <p className="eyebrow">Family Resources</p>
             <h2>Support the questions families ask before they register.</h2>
             <div className="level-grid compact-grid">
               {parentResourceLinks.map((item) => (

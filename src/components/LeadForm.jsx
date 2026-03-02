@@ -122,7 +122,7 @@ function LeadForm({
       } catch (error) {
         setStatus("error");
         setMessage(
-          "Online submission failed, so the form will fall back to your email app."
+          "We could not send the form here, so your email app will open with your details prefilled."
         );
 
         if (events.fail) {
@@ -224,18 +224,12 @@ function LeadForm({
         <div className="form-feedback form-feedback-success">
           <strong>{successTitle}</strong>
           <p>{message}</p>
-          {submitMode === "email" ? (
-            <p className="helper-copy">
-              A hosted form or CRM endpoint will remove the email-app
-              dependency on this step once ATB connects it.
-            </p>
-          ) : null}
         </div>
       ) : null}
 
       {status === "error" ? (
         <div className="form-feedback form-feedback-error">
-          <strong>Online submission failed.</strong>
+          <strong>We need one more step.</strong>
           <p>{message}</p>
         </div>
       ) : null}

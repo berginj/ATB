@@ -21,7 +21,7 @@ function AgeGroupProgram() {
   }
 
   const title = `${program.name} Travel Baseball in Arlington, VA`;
-  const description = `ATB ${program.name} program overview for Arlington families, with development focus, next-step links, and a clear route to tryouts and registration.`;
+  const description = `ATB ${program.name} program overview for Arlington families, with development focus, next-step links, and a direct path to tryouts and registration.`;
 
   return (
     <>
@@ -67,10 +67,10 @@ function AgeGroupProgram() {
 
           <div className="content-panel dark-panel">
             <p className="eyebrow">Next step</p>
-            <h2>Route families into the current-season process.</h2>
+            <h2>Take the next step with confidence.</h2>
             <p>
-              This age-group page is designed to rank for specific searches and
-              then move parents into the live tryouts and registration flow.
+              Once the fit feels right, families can move directly into tryouts
+              and registration.
             </p>
             <div className="stacked-links">
               <Link className="button button-small" to="/tryouts">

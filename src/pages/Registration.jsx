@@ -10,16 +10,16 @@ import {
 
 const registrationProof = [
   {
-    title: "One path",
-    detail: "The site now routes parents from tryouts to one canonical registration flow."
+    title: "One clear form",
+    detail: "Families can share the right information quickly and keep the next step moving."
   },
   {
-    title: "Separate intent",
-    detail: "Families who are not ready to register can join tryout alerts without filling out the full form."
+    title: "Stay connected",
+    detail: "Families who are not ready to register can still stay in the loop through tryout alerts."
   },
   {
-    title: "Backup support",
-    detail: "Every step includes direct ATB email and phone contact if a form needs manual follow-up."
+    title: "Direct support",
+    detail: "ATB is easy to reach if you need answers before, during, or after registration."
   }
 ];
 
@@ -95,7 +95,7 @@ function Registration() {
   const tryoutAlertsEndpoint = import.meta.env.VITE_TRYOUT_ALERTS_ENDPOINT;
   const title = "Tryout Registration | Arlington Travel Baseball";
   const description =
-    "A real, indexable ATB registration page for Arlington and Northern Virginia families: tryout registration, tryout alerts, and clear next-step expectations.";
+    "ATB registration for Arlington and Northern Virginia families: tryout registration, tryout alerts, and clear next-step expectations.";
 
   return (
     <>
@@ -122,22 +122,21 @@ function Registration() {
         <p className="eyebrow">Registration</p>
         <h1>Complete tryout registration in one place.</h1>
         <p>
-          This page replaces the old dead-end registration experience with a
-          real form, a separate alert signup, and a clear explanation of what
-          happens after a family reaches out.
+          Share the essentials, stay connected to upcoming tryout news, and
+          keep the next step simple for your family.
         </p>
       </div>
 
-      <ProofStrip items={registrationProof} eyebrow="Conversion-first" />
+      <ProofStrip items={registrationProof} eyebrow="Why Families Use This Page" />
 
       <LeadForm
         formId="tryout-registration"
         title="Register for tryouts"
-        description="Share the essentials once, and ATB can follow up with the right next step for your player."
+        description="Share the key details once so ATB can guide your player into the right next step."
         fields={tryoutFields}
         submitLabel="Start tryout registration"
-        successTitle="Registration request started"
-        successMessage="ATB now has the details needed to confirm fit, timing, and the next communication step."
+        successTitle="Registration request received"
+        successMessage="ATB has your information and will follow up with the next step."
         endpoint={tryoutEndpoint}
         mailtoSubject="ATB tryout registration request"
         events={{
@@ -145,45 +144,42 @@ function Registration() {
           success: "tryout_register_complete",
           fail: "contact_submit_fail"
         }}
-        aside="This form works now and can submit directly in-browser once ATB connects a hosted form endpoint."
+        aside="A quick, complete form helps ATB respond faster."
       />
 
       <div className="split-section">
         <LeadForm
           formId="tryout-alerts"
           title="Join tryout alerts"
-          description="Not ready to commit yet? Subscribe for date updates, schedule changes, and next-open registration windows."
+          description="Not ready to register yet? Stay connected for tryout dates, updates, and upcoming opportunities."
           fields={tryoutAlertFields}
           submitLabel="Join tryout alerts"
-          successTitle="Tryout alerts requested"
-          successMessage="You are on the path for tryout updates and ATB follow-up."
+          successTitle="You are on the list"
+          successMessage="ATB will keep you updated with important tryout news and next steps."
           endpoint={tryoutAlertsEndpoint}
           mailtoSubject="ATB tryout alerts request"
           events={{
             success: "email_signup",
             fail: "contact_submit_fail"
           }}
-          aside="This alert signup can connect directly to ATB's mailing list once the preferred email tool is selected."
+          aside="A simple way to stay connected when the timing is not right yet."
         />
 
         <div className="content-panel dark-panel">
           <p className="eyebrow">What happens next</p>
-          <h2>Set expectations immediately after the form.</h2>
+          <h2>Here is what families can expect after they register.</h2>
           <div className="feature-list">
             <div className="feature-row">
-              ATB reviews the submission and confirms the right age-group next step.
+              ATB reviews your submission and matches your player to the right next step.
             </div>
             <div className="feature-row">
               Families receive direct follow-up by email or phone.
             </div>
             <div className="feature-row">
-              Confirmed dates, locations, and what-to-bring details should be sent in that follow-up.
+              Session details, logistics, and what-to-bring information are shared as part of follow-up.
             </div>
           </div>
-          <p className="helper-copy">
-            A response-time expectation can be added here once ATB confirms who
-            owns inbox monitoring.
-          </p>
+          <p className="helper-copy">ATB keeps the process moving with direct, family-first communication.</p>
         </div>
       </div>
 
@@ -191,8 +187,8 @@ function Registration() {
         <p className="eyebrow">Need details first?</p>
         <h2>Review tryout expectations before you register.</h2>
         <p>
-          Families who still need dates, logistics, and FAQs should start on the
-          tryouts page and then come back here to submit the form.
+          If you want the full overview first, start on the tryouts page and
+          come back here when you are ready to sign up.
         </p>
         <div className="stacked-links">
           <Link className="button button-small" to="/tryouts">

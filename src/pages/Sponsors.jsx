@@ -86,7 +86,7 @@ function SponsorsPage() {
   const sponsorLeadEndpoint = import.meta.env.VITE_SPONSOR_LEAD_ENDPOINT;
   const title = "Sponsor ATB | Reach Arlington Baseball Families";
   const description =
-    "ATB sponsorship opportunities, current sponsor visibility, and the working sponsor lead path for local businesses targeting Arlington baseball families.";
+    "ATB sponsorship opportunities, current sponsor visibility, and a direct path for local businesses to connect with Arlington baseball families.";
 
   return (
     <>
@@ -111,11 +111,10 @@ function SponsorsPage() {
       <section className="page-shell">
       <div className="page-hero">
         <p className="eyebrow">Sponsors</p>
-        <h1>Turn sponsor interest into a cleaner lead path.</h1>
+        <h1>Support player development and put your brand in front of Arlington baseball families.</h1>
         <p>
-          The sponsor page now shows the real current partner logos and gives
-          ATB a single place to capture sponsor intent before payment and logo
-          collection are fully wired.
+          ATB partnerships help fuel player growth, strengthen the club, and
+          connect local businesses with a strong community of families.
         </p>
       </div>
 
@@ -125,10 +124,6 @@ function SponsorsPage() {
             <p className="eyebrow">{tier.name}</p>
             <h2>{tier.name} Sponsorship</h2>
             <p>{tier.detail}</p>
-            <p className="helper-copy">
-              Current-season pricing and payment links belong here once ATB
-              confirms them.
-            </p>
           </article>
         ))}
       </div>
@@ -136,18 +131,18 @@ function SponsorsPage() {
       <LeadForm
         formId="sponsor-lead"
         title="Start a sponsor lead"
-        description="Use this form now for sponsor intent. Once ATB confirms checkout tooling, this can expand into payment plus logo upload."
+        description="Tell ATB about your business, your goals, and the audience you want to reach."
         fields={sponsorLeadFields}
         submitLabel="Send sponsor inquiry"
-        successTitle="Sponsor lead started"
-        successMessage="ATB now has the sponsor contact details needed for next-step follow-up."
+        successTitle="Sponsor inquiry received"
+        successMessage="ATB has your information and will follow up with the right next step."
         endpoint={sponsorLeadEndpoint}
         mailtoSubject="ATB sponsor inquiry"
         events={{
           success: "sponsor_inquiry_submit",
           fail: "contact_submit_fail"
         }}
-        aside="This captures sponsor intent now. Online checkout and logo upload can be added here once ATB finalizes payment ownership."
+        aside="A simple first step for businesses ready to support the club."
       />
 
       <SponsorsSection />
@@ -170,16 +165,13 @@ function SponsorsPage() {
         </div>
 
         <div className="content-panel">
-          <p className="eyebrow">Next upgrade</p>
-          <h2>Close the loop with payment and intake.</h2>
+          <p className="eyebrow">Why it matters</p>
+          <h2>Support that shows up on the field and in the community.</h2>
           <p>
-            The remaining gap is operational, not design: ATB still needs a live
-            checkout link, receipt flow, and logo upload path connected here.
+            Sponsorship helps strengthen player opportunities, support events,
+            and keep ATB visible across the Arlington baseball community.
           </p>
-          <p className="helper-copy">
-            Sponsor receipt emails, logo upload, and outbound sponsor click
-            tracking can be layered in next to complete the funnel.
-          </p>
+          <p className="helper-copy">ATB partnerships are built to be visible, practical, and community-driven.</p>
         </div>
       </div>
       </section>

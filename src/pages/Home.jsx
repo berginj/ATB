@@ -34,17 +34,17 @@ const proofItems = [
 const startHere = [
   {
     title: "Tryouts",
-    detail: "Start with the canonical page for timing, expectations, and the next step for your player.",
+    detail: "See current expectations, important details, and the next step for your player.",
     to: "/tryouts"
   },
   {
     title: "Registration",
-    detail: "Use the working registration flow for tryout interest or join the lower-friction alert list.",
+    detail: "Share your family's information, register for tryouts, or join the alert list.",
     to: "/registration"
   },
   {
     title: "Contact",
-    detail: "Use the single working support path for schedule questions, sponsor outreach, and follow-up.",
+    detail: "Reach ATB directly for schedule questions, sponsor interest, or family support.",
     to: "/contact"
   }
 ];
@@ -52,17 +52,17 @@ const startHere = [
 const parentSearchGuides = [
   {
     title: "Travel Baseball in Arlington",
-    detail: "A local parent guide built around the searches families actually use.",
+    detail: "A clear look at how ATB fits families searching for the right baseball path in Arlington.",
     to: "/travel-baseball-arlington-va"
   },
   {
     title: "Costs + Commitment",
-    detail: "Answer the time, schedule, and commitment questions before registration.",
+    detail: "Understand the season rhythm, expectations, and family commitment before you decide.",
     to: "/costs-commitment"
   },
   {
     title: "Rec + Travel Compatibility",
-    detail: "Show how ATB fits alongside Arlington Little League and spring rec ball.",
+    detail: "See how ATB works alongside Arlington Little League and spring rec baseball.",
     to: "/rec-travel-compatibility"
   }
 ];
@@ -260,13 +260,10 @@ function Home() {
             gear for a swap table, including bats, gloves, hats, uniforms,
             cleats, bags, and other equipment.
           </p>
-          <p className="helper-copy">
-            Registration link pending: add the live Wiffle Ball Bash signup link
-            here once it is available.
-          </p>
+          <p className="helper-copy">Contact ATB for the latest event details and registration information.</p>
           <div className="stacked-links">
             <Link className="button button-small button-ghost" to="/contact">
-              Ask for the registration link
+              Contact ATB
             </Link>
           </div>
         </div>
@@ -306,10 +303,10 @@ function Home() {
 
       <section className="content-panel">
         <p className="eyebrow">Start Here</p>
-        <h2>Keep the next action easy to find.</h2>
+        <h2>Keep the next move simple for every family.</h2>
         <p>
-          Families should not have to hunt for the right page. These are the
-          three most useful starting points during the spring season.
+          The right information should be easy to find during the season. These
+          are the three best places to begin.
         </p>
         <div className="level-grid compact-grid">
           {startHere.map((item) => (
@@ -325,8 +322,8 @@ function Home() {
       </section>
 
       <section className="content-panel">
-        <p className="eyebrow">Parent Search Guides</p>
-        <h2>Build visibility around the questions Arlington families already ask.</h2>
+        <p className="eyebrow">Family Resources</p>
+        <h2>Helpful answers for the questions families ask most.</h2>
         <div className="level-grid compact-grid">
           {parentSearchGuides.map((item) => (
             <article key={item.to} className="mini-card">
@@ -341,7 +338,7 @@ function Home() {
         <div className="pill-actions">
           {ageGroupLinks.map((slug) => (
             <Link key={slug} className="pill-link" to={`/programs/${slug}`}>
-              {slug.toUpperCase()} page
+              Explore {slug.toUpperCase()}
             </Link>
           ))}
         </div>

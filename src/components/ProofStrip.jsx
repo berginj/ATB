@@ -4,7 +4,7 @@ function ProofStrip({ eyebrow = "Why families trust the path", items }) {
       <div className="section-heading">
         <div>
           <p className="eyebrow">{eyebrow}</p>
-          <h2>Clear next steps, visible proof, and no dead-end CTAs.</h2>
+          <h2>Built around player development, family clarity, and trust.</h2>
         </div>
       </div>
 

@@ -9,7 +9,7 @@ import {
 const compatibilityPoints = [
   "Rec baseball, primarily through Arlington Little League, remains a core part of the ATB ethos.",
   "ATB uses Sunday practices and games to keep teams connected while players stay active in their local baseball communities.",
-  "Parents should communicate clearly with both Arlington Little League and ATB coaches so player workload stays safe."
+  "Clear communication between families and both coaching staffs keeps player workload safe and manageable."
 ];
 
 function RecTravelCompatibility() {
@@ -42,10 +42,8 @@ function RecTravelCompatibility() {
           <p className="eyebrow">Parent Resource</p>
           <h1>Yes, ATB is built to work alongside rec baseball.</h1>
           <p>
-            One of the biggest local search questions is whether a player can
-            stay in Arlington Little League and still participate in ATB. This
-            page gives a clear answer and sets expectations around scheduling
-            and communication.
+            ATB is built for families who want stronger development without
+            stepping away from the Arlington baseball community.
           </p>
         </div>
 
@@ -63,16 +61,15 @@ function RecTravelCompatibility() {
           </div>
 
           <div className="content-panel dark-panel">
-            <p className="eyebrow">What families should expect</p>
+            <p className="eyebrow">What families can expect</p>
             <h2>Communication is part of the commitment.</h2>
             <p>
-              Families should expect to track player workload, keep both coaches
-              informed, and use the published tryout and team communication flow
-              to avoid confusion during the spring season.
+              Families stay on top of player workload, keep both coaches
+              informed, and help create a smoother spring for everyone.
             </p>
             <p>
-              Exact current-season team schedules and pitch-count handling should
-              only be expanded when ATB confirms them for the live season.
+              Team schedules, pitch-count guidance, and player care all work
+              best when communication stays steady and proactive.
             </p>
           </div>
         </div>
