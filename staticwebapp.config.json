@@ -1,18 +1,12 @@
 {
   "routes": [
     { "route": "/register", "redirect": "/registration", "statusCode": 301 },
-    { "route": "/register/", "redirect": "/registration", "statusCode": 301 },
     { "route": "/contact-us", "redirect": "/contact", "statusCode": 301 },
-    { "route": "/contact-us/", "redirect": "/contact", "statusCode": 301 },
     { "route": "/sponsorships", "redirect": "/sponsors", "statusCode": 301 },
-    { "route": "/sponsorships/", "redirect": "/sponsors", "statusCode": 301 },
     { "route": "/category/tryouts/*", "redirect": "/tryouts", "statusCode": 301 },
     { "route": "/about-atb/atb-9u-12u-faqs", "redirect": "/programs", "statusCode": 301 },
-    { "route": "/about-atb/atb-9u-12u-faqs/", "redirect": "/programs", "statusCode": 301 },
     { "route": "/about-atb/arsenal-13u-14u-faqs", "redirect": "/programs", "statusCode": 301 },
-    { "route": "/about-atb/arsenal-13u-14u-faqs/", "redirect": "/programs", "statusCode": 301 },
     { "route": "/register-for-6u-7u-academy", "redirect": "/registration", "statusCode": 301 },
-    { "route": "/register-for-6u-7u-academy/", "redirect": "/registration", "statusCode": 301 },
     { "route": "/*", "serve": "/index.html" }
   ],
   "navigationFallback": {
