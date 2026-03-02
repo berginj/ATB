@@ -1,0 +1,3 @@
+[submodule "content-manager-kit"]
+	path = content-manager-kit
+	url = https://github.com/berginj/-content-manager-kit.git
