@@ -14,7 +14,8 @@ const supportLinks = [
   { label: "Teams", to: "/teams" },
   { label: "Sponsors", to: "/sponsors" },
   { label: "Registration", to: "/registration" },
-  { label: "Contact", to: "/contact" }
+  { label: "Contact", to: "/contact" },
+  { label: "Content Manager", to: "/content-manager" }
 ];
 
 function Footer() {

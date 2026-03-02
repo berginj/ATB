@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Hero from "../components/Hero";
+import ManagedContentHighlights from "../components/ManagedContentHighlights";
 import PageSeo from "../components/PageSeo";
 import ProofStrip from "../components/ProofStrip";
 import InstagramFeed from "../components/InstagramFeed";
@@ -129,6 +130,8 @@ function Home() {
           </div>
         ))}
       </section>
+
+      <ManagedContentHighlights />
 
       <ProofStrip items={proofItems} />
 

@@ -829,6 +829,80 @@ main {
   background: rgba(200, 16, 46, 0.06);
 }
 
+.manager-alert .section-caption {
+  margin-top: 1rem;
+}
+
+.manager-template-grid,
+.manager-item-list {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.manager-template-card,
+.manager-highlight-card {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.manager-shell {
+  align-items: start;
+}
+
+.manager-list-panel,
+.manager-editor-panel {
+  height: 100%;
+}
+
+.manager-item-button {
+  display: grid;
+  gap: 0.25rem;
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--color-slate-200);
+  border-radius: 0.85rem;
+  background: var(--color-white);
+  color: var(--color-brand-secondary);
+  text-align: left;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.manager-item-button:hover,
+.manager-item-button.is-active {
+  border-color: rgba(66, 139, 202, 0.35);
+  box-shadow: 0 8px 24px rgba(66, 139, 202, 0.08);
+  transform: translateY(-1px);
+}
+
+.manager-item-button span,
+.manager-item-button small {
+  color: var(--color-slate-500);
+}
+
+.manager-item-button strong {
+  font-size: 0.95rem;
+}
+
+.manager-json {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.9rem;
+  border: 1px solid var(--color-slate-200);
+  border-radius: 0.85rem;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--color-brand-secondary);
+  font: inherit;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.manager-json:focus {
+  outline: 2px solid transparent;
+  border-color: rgba(66, 139, 202, 0.45);
+  box-shadow: 0 0 0 3px rgba(66, 139, 202, 0.12);
+}
+
 .site-footer {
   margin-top: 3rem;
   padding: 3rem 1rem 2rem;
@@ -951,6 +1025,16 @@ main {
 
   .form-field-full {
     grid-column: span 2;
+  }
+
+  .manager-template-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .manager-item-list {
+    max-height: 42rem;
+    overflow-y: auto;
+    padding-right: 0.25rem;
   }
 
   .instagram-grid {
