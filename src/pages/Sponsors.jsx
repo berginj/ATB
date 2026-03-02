@@ -1,5 +1,11 @@
+import PageSeo from "../components/PageSeo";
 import LeadForm from "../components/LeadForm";
 import SponsorsSection from "../components/Sponsors";
+import {
+  breadcrumbSchema,
+  organizationSchema,
+  webPageSchema
+} from "../lib/site";
 
 const sponsorTiers = [
   {
@@ -78,9 +84,31 @@ function SponsorsPage() {
   // TODO: Point this env var at the sponsor intake workflow now; replace it
   // with tier-specific checkout URLs once ATB confirms payment ownership.
   const sponsorLeadEndpoint = import.meta.env.VITE_SPONSOR_LEAD_ENDPOINT;
+  const title = "Sponsor ATB | Reach Arlington Baseball Families";
+  const description =
+    "ATB sponsorship opportunities, current sponsor visibility, and the working sponsor lead path for local businesses targeting Arlington baseball families.";
 
   return (
-    <section className="page-shell">
+    <>
+      <PageSeo
+        title={title}
+        description={description}
+        path="/sponsors"
+        schema={[
+          organizationSchema(),
+          webPageSchema({
+            path: "/sponsors",
+            title,
+            description
+          }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Sponsors", path: "/sponsors" }
+          ])
+        ]}
+      />
+
+      <section className="page-shell">
       <div className="page-hero">
         <p className="eyebrow">Sponsors</p>
         <h1>Turn sponsor interest into a cleaner lead path.</h1>
@@ -154,7 +182,8 @@ function SponsorsPage() {
           </p>
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 }
 

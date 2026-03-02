@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
 import Hero from "../components/Hero";
+import PageSeo from "../components/PageSeo";
 import ProofStrip from "../components/ProofStrip";
 import InstagramFeed from "../components/InstagramFeed";
 import SponsorsSection from "../components/Sponsors";
+import {
+  breadcrumbSchema,
+  organizationSchema,
+  webPageSchema
+} from "../lib/site";
 
 const quickHits = [
   "Spring NVTBL Sunday dates are now posted",
@@ -43,6 +49,26 @@ const startHere = [
   }
 ];
 
+const parentSearchGuides = [
+  {
+    title: "Travel Baseball in Arlington",
+    detail: "A local parent guide built around the searches families actually use.",
+    to: "/travel-baseball-arlington-va"
+  },
+  {
+    title: "Costs + Commitment",
+    detail: "Answer the time, schedule, and commitment questions before registration.",
+    to: "/costs-commitment"
+  },
+  {
+    title: "Rec + Travel Compatibility",
+    detail: "Show how ATB fits alongside Arlington Little League and spring rec ball.",
+    to: "/rec-travel-compatibility"
+  }
+];
+
+const ageGroupLinks = ["8u", "9u", "10u", "11u", "12u"];
+
 const insideThisUpdate = [
   "Spring NVTBL schedule",
   "Arm care guidance",
@@ -73,8 +99,27 @@ const academyRegistrationUrl =
   "https://arlingtontravelbaseball.org/register-for-6u-7u-academy/";
 
 function Home() {
+  const title = "Arlington Travel Baseball | 8U-12U Travel Baseball in Arlington, VA";
+  const description =
+    "ATB helps Arlington and Northern Virginia families compare programs, view tryouts, understand rec-plus-travel fit, and move into a real registration path.";
+
   return (
     <>
+      <PageSeo
+        title={title}
+        description={description}
+        path="/"
+        schema={[
+          organizationSchema(),
+          webPageSchema({
+            path: "/",
+            title,
+            description
+          }),
+          breadcrumbSchema([{ name: "Home", path: "/" }])
+        ]}
+      />
+
       <Hero />
 
       <section className="feature-strip">
@@ -275,6 +320,29 @@ function Home() {
                 Open page
               </Link>
             </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="content-panel">
+        <p className="eyebrow">Parent Search Guides</p>
+        <h2>Build visibility around the questions Arlington families already ask.</h2>
+        <div className="level-grid compact-grid">
+          {parentSearchGuides.map((item) => (
+            <article key={item.to} className="mini-card">
+              <h3>{item.title}</h3>
+              <p>{item.detail}</p>
+              <Link to={item.to} className="inline-link">
+                Open page
+              </Link>
+            </article>
+          ))}
+        </div>
+        <div className="pill-actions">
+          {ageGroupLinks.map((slug) => (
+            <Link key={slug} className="pill-link" to={`/programs/${slug}`}>
+              {slug.toUpperCase()} page
+            </Link>
           ))}
         </div>
       </section>

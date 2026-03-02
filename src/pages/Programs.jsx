@@ -1,76 +1,122 @@
 import { Link } from "react-router-dom";
+import PageSeo from "../components/PageSeo";
+import { ageGroupPrograms, programSeasonRhythm } from "../data/programs";
+import {
+  breadcrumbSchema,
+  organizationSchema,
+  webPageSchema
+} from "../lib/site";
 
-const levels = [
+const parentResourceLinks = [
   {
-    name: "8U",
-    focus: "Academy-style fundamentals, athletic movement, and confidence-building reps."
+    title: "Travel Baseball in Arlington",
+    detail: "A search-friendly local guide for families comparing next-step baseball options.",
+    to: "/travel-baseball-arlington-va"
   },
   {
-    name: "9U",
-    focus: "Core mechanics, defensive footwork, base running, and team habits."
+    title: "Costs + Commitment",
+    detail: "Use this page to answer the time and commitment questions before registration.",
+    to: "/costs-commitment"
   },
   {
-    name: "10U",
-    focus: "Advanced defensive reads, situational offense, and stronger team play."
-  },
-  {
-    name: "11U",
-    focus: "50/70 transition prep, off-speed adjustments, and game-speed decisions."
-  },
-  {
-    name: "12U",
-    focus: "Complete player development, strength work, and preparation for the big field."
+    title: "Rec + Travel Compatibility",
+    detail: "Show parents how ATB fits alongside Arlington Little League and spring rec baseball.",
+    to: "/rec-travel-compatibility"
   }
 ];
 
-const seasons = [
-  "Fall: NVTBL Sunday doubleheaders and mid-week practices",
-  "Winter: Indoor hitting, strength, conditioning, and agility",
-  "Spring: Rec league support plus focused ATB training windows",
-  "Summer: Tournament play and high-rep competition"
-];
-
 function Programs() {
+  const title = "ATB Programs | 8U-12U Travel Baseball in Arlington, VA";
+  const description =
+    "Explore the ATB 8U-12U development path, open a dedicated age-group page, and move directly into the current-season tryout and registration flow.";
+
   return (
-    <section className="page-shell">
-      <div className="page-hero">
-        <p className="eyebrow">Programs</p>
-        <h1>A clearer development path, paired with a cleaner next step.</h1>
-        <p>
-          Every team is designed to build durable fundamentals first, then add
-          game awareness, speed, strength, and competitive confidence.
-        </p>
-      </div>
+    <>
+      <PageSeo
+        title={title}
+        description={description}
+        path="/programs"
+        schema={[
+          organizationSchema(),
+          webPageSchema({
+            path: "/programs",
+            title,
+            description
+          }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Programs", path: "/programs" }
+          ])
+        ]}
+      />
 
-      <div className="level-grid">
-        {levels.map((level) => (
-          <article key={level.name} className="content-panel">
-            <p className="eyebrow">{level.name}</p>
-            <h2>{level.name} Development Track</h2>
-            <p>{level.focus}</p>
-            <Link className="button button-small button-ghost" to="/tryouts">
-              View Tryouts
-            </Link>
-          </article>
-        ))}
-      </div>
+      <section className="page-shell">
+        <div className="page-hero">
+          <p className="eyebrow">Programs</p>
+          <h1>8U-12U travel baseball in Arlington, with a clearer path by age group.</h1>
+          <p>
+            The program page now acts as a real hub: broad overview here,
+            dedicated search-friendly pages for each age group, and direct links
+            into tryouts and registration.
+          </p>
+        </div>
 
-      <div className="content-panel">
-        <p className="eyebrow">Season Rhythm</p>
-        <h2>Training that stays connected all year</h2>
-        <div className="feature-list">
-          {seasons.map((item) => (
-            <div key={item} className="feature-row">
-              {item}
-            </div>
+        <div className="level-grid">
+          {ageGroupPrograms.map((program) => (
+            <article key={program.slug} className="content-panel">
+              <p className="eyebrow">{program.name}</p>
+              <h2>{program.name} Development Track</h2>
+              <p>{program.focus}</p>
+              <div className="stacked-links">
+                <Link
+                  className="button button-small button-ghost"
+                  to={`/programs/${program.slug}`}
+                >
+                  Open {program.name} Page
+                </Link>
+                <Link className="inline-link" to="/tryouts">
+                  Review tryouts
+                </Link>
+              </div>
+            </article>
           ))}
         </div>
-        <p className="helper-copy">
-          Additional program-specific pages can expand once ATB confirms the
-          current season lineup.
-        </p>
-      </div>
-    </section>
+
+        <div className="split-section">
+          <div className="content-panel">
+            <p className="eyebrow">Season Rhythm</p>
+            <h2>Training that stays connected all year</h2>
+            <div className="feature-list">
+              {programSeasonRhythm.map((item) => (
+                <div key={item} className="feature-row">
+                  {item}
+                </div>
+              ))}
+            </div>
+            <p className="helper-copy">
+              Publish exact current-season team structure only after ATB confirms
+              which age groups are active.
+            </p>
+          </div>
+
+          <div className="content-panel dark-panel">
+            <p className="eyebrow">Parent Search Guides</p>
+            <h2>Support the questions families ask before they register.</h2>
+            <div className="level-grid compact-grid">
+              {parentResourceLinks.map((item) => (
+                <article key={item.to} className="mini-card">
+                  <h3>{item.title}</h3>
+                  <p>{item.detail}</p>
+                  <Link className="inline-link" to={item.to}>
+                    Open page
+                  </Link>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
 

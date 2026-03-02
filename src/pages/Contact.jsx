@@ -1,5 +1,11 @@
 import { Link } from "react-router-dom";
 import LeadForm from "../components/LeadForm";
+import PageSeo from "../components/PageSeo";
+import {
+  breadcrumbSchema,
+  organizationSchema,
+  webPageSchema
+} from "../lib/site";
 
 const contactFields = [
   {
@@ -43,9 +49,31 @@ function Contact() {
   // TODO: Point this env var at the production contact inbox workflow once ATB
   // chooses the hosted form or CRM endpoint.
   const contactEndpoint = import.meta.env.VITE_CONTACT_FORM_ENDPOINT;
+  const title = "Contact ATB | Arlington Travel Baseball";
+  const description =
+    "Use the main ATB contact path for tryouts, registration, sponsor questions, and family follow-up.";
 
   return (
-    <section className="page-shell">
+    <>
+      <PageSeo
+        title={title}
+        description={description}
+        path="/contact"
+        schema={[
+          organizationSchema(),
+          webPageSchema({
+            path: "/contact",
+            title,
+            description
+          }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Contact", path: "/contact" }
+          ])
+        ]}
+      />
+
+      <section className="page-shell">
       <div className="page-hero">
         <p className="eyebrow">Contact</p>
         <h1>One reliable contact path for parents, players, and sponsors.</h1>
@@ -110,7 +138,8 @@ function Contact() {
           </Link>
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 }
 

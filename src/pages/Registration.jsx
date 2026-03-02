@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
 import LeadForm from "../components/LeadForm";
+import PageSeo from "../components/PageSeo";
 import ProofStrip from "../components/ProofStrip";
+import {
+  breadcrumbSchema,
+  organizationSchema,
+  webPageSchema
+} from "../lib/site";
 
 const registrationProof = [
   {
@@ -87,9 +93,31 @@ function Registration() {
   // confirms the production submission stack.
   const tryoutEndpoint = import.meta.env.VITE_TRYOUT_FORM_ENDPOINT;
   const tryoutAlertsEndpoint = import.meta.env.VITE_TRYOUT_ALERTS_ENDPOINT;
+  const title = "Tryout Registration | Arlington Travel Baseball";
+  const description =
+    "A real, indexable ATB registration page for Arlington and Northern Virginia families: tryout registration, tryout alerts, and clear next-step expectations.";
 
   return (
-    <section className="page-shell">
+    <>
+      <PageSeo
+        title={title}
+        description={description}
+        path="/registration"
+        schema={[
+          organizationSchema(),
+          webPageSchema({
+            path: "/registration",
+            title,
+            description
+          }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Registration", path: "/registration" }
+          ])
+        ]}
+      />
+
+      <section className="page-shell">
       <div className="page-hero">
         <p className="eyebrow">Registration</p>
         <h1>Complete tryout registration in one place.</h1>
@@ -175,7 +203,8 @@ function Registration() {
           </Link>
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 }
 

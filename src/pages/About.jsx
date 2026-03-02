@@ -1,6 +1,36 @@
+import PageSeo from "../components/PageSeo";
+import {
+  breadcrumbSchema,
+  organizationSchema,
+  webPageSchema
+} from "../lib/site";
+
 function About() {
+  const title = "About ATB | Arlington Travel Baseball";
+  const description =
+    "Learn about the Arlington Travel Baseball mission, values, and player-development focus for Arlington and Northern Virginia families.";
+
   return (
-    <section className="page-shell">
+    <>
+      <PageSeo
+        title={title}
+        description={description}
+        path="/about"
+        schema={[
+          organizationSchema(),
+          webPageSchema({
+            path: "/about",
+            title,
+            description
+          }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "About", path: "/about" }
+          ])
+        ]}
+      />
+
+      <section className="page-shell">
       <div className="page-hero">
         <p className="eyebrow">About ATB</p>
         <h1>Focused on player development, built around Arlington families.</h1>
@@ -38,7 +68,8 @@ function About() {
           </p>
         </article>
       </div>
-    </section>
+      </section>
+    </>
   );
 }
 

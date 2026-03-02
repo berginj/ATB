@@ -3,15 +3,18 @@ import atbLogo from "../assets/atb-logo.png";
 
 const siteLinks = [
   { label: "Home", to: "/" },
+  { label: "Travel Baseball in Arlington", to: "/travel-baseball-arlington-va" },
   { label: "Programs", to: "/programs" },
-  { label: "Tryouts", to: "/tryouts" },
-  { label: "Contact", to: "/contact" }
+  { label: "Tryouts", to: "/tryouts" }
 ];
 
 const supportLinks = [
+  { label: "Costs + Commitment", to: "/costs-commitment" },
+  { label: "Rec + Travel", to: "/rec-travel-compatibility" },
   { label: "Teams", to: "/teams" },
   { label: "Sponsors", to: "/sponsors" },
-  { label: "Registration", to: "/registration" }
+  { label: "Registration", to: "/registration" },
+  { label: "Contact", to: "/contact" }
 ];
 
 function Footer() {

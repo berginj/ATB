@@ -7,6 +7,10 @@ import About from "./pages/About";
 import Programs from "./pages/Programs";
 import Tryouts from "./pages/Tryouts";
 import Registration from "./pages/Registration";
+import TravelBaseballArlington from "./pages/TravelBaseballArlington";
+import CostsCommitment from "./pages/CostsCommitment";
+import RecTravelCompatibility from "./pages/RecTravelCompatibility";
+import AgeGroupProgram from "./pages/AgeGroupProgram";
 import Teams from "./pages/Teams";
 import SponsorsPage from "./pages/Sponsors";
 import Contact from "./pages/Contact";
@@ -30,7 +34,17 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route
+            path="/travel-baseball-arlington-va"
+            element={<TravelBaseballArlington />}
+          />
           <Route path="/programs" element={<Programs />} />
+          <Route path="/programs/:ageGroup" element={<AgeGroupProgram />} />
+          <Route path="/costs-commitment" element={<CostsCommitment />} />
+          <Route
+            path="/rec-travel-compatibility"
+            element={<RecTravelCompatibility />}
+          />
           <Route path="/tryouts" element={<Tryouts />} />
           <Route path="/registration" element={<Registration />} />
           <Route path="/teams" element={<Teams />} />

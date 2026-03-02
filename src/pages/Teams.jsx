@@ -1,3 +1,10 @@
+import PageSeo from "../components/PageSeo";
+import {
+  breadcrumbSchema,
+  organizationSchema,
+  webPageSchema
+} from "../lib/site";
+
 const teams = [
   {
     name: "Academy / entry level",
@@ -18,8 +25,31 @@ const teams = [
 ];
 
 function Teams() {
+  const title = "ATB Teams | Arlington Travel Baseball";
+  const description =
+    "Overview of current ATB team tracks, pending team details, and the safest next step for families who need confirmed team information.";
+
   return (
-    <section className="page-shell">
+    <>
+      <PageSeo
+        title={title}
+        description={description}
+        path="/teams"
+        schema={[
+          organizationSchema(),
+          webPageSchema({
+            path: "/teams",
+            title,
+            description
+          }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Teams", path: "/teams" }
+          ])
+        ]}
+      />
+
+      <section className="page-shell">
       <div className="page-hero">
         <p className="eyebrow">Teams</p>
         <h1>Keep the team page current, accurate, and easy to trust.</h1>
@@ -51,7 +81,8 @@ function Teams() {
           </article>
         ))}
       </div>
-    </section>
+      </section>
+    </>
   );
 }
 
